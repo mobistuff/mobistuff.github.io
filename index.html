@@ -1,0 +1,232 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mobistuff | Welcome</title>
+    <link rel="stylesheet" href="css/foundation.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/vendor/modernizr.js"></script>
+    <style>
+        #map-canvas {
+            width: 100%;
+            height: 200px;
+        }
+    </style>
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCgUu26TwfE9pyCvaTISk9pTVgncWhzPo4"></script>
+    <script>
+        var map;
+        function initialize() {
+            var mapOptions = {
+                zoom: 8,
+                center: new google.maps.LatLng(38.2500, 21.7333)
+            };
+            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+<body>
+<header>
+    <div class="row">
+        <div class="large-12 columns">
+            <h1>Mobistuff</h1>
+
+            <h3 class="subheader">Smart information on the go</h3>
+
+            <p>We are a small group of passionate developers. Feel free to contact us for any inquiry you may have. We
+                are always glad to hear your views and ideas!</p>
+            <br/>
+            <br/>
+            <a href="#" class="button">Learn more</a>
+        </div>
+    </div>
+</header>
+<section id="expertise">
+    <div class="row">
+        <div class="large-12 columns">
+            <h2>Specialities</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-6 columns speciality">
+            <h3>WEB</h3>
+            <p class="subheader">Web development using HTML5, CSS, Foundation and Javascript.</p>
+        </div>
+        <div class="large-6 columns speciality">
+            <h3>Android</h3>
+            <p class="subheader">Native development for Android devices.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-6 columns speciality">
+            <h3>Server</h3>
+            <p class="subheader">Using latest technologies like node.js and MongoDB.</p>
+        </div>
+        <div class="large-6 columns speciality">
+            <h3>Consulting</h3>
+            <p class="subheader">We can contribute on setting up your next project.</p>
+        </div>
+    </div>
+</section>
+<hr/>
+<section id="projects">
+    <div class="row">
+        <div class="large-12 columns">
+            <h2>Projects</h2>
+        </div>
+    </div>
+    <div class="row project">
+        <div class="large-3 columns">
+            <img src="./img/venzinigr/1.png" alt="venziniGR" width="200" height="180"/>
+        </div>
+        <div class="large-9 columns">
+            <h3>VenziniGR</h3>
+            <h5 class="subheader">ANDROID</h5>
+
+            <p>Prices are updated daily ​​from the Ministry of Development. Show prices on a map and list filtering with
+                criteria on distance, brand, price and fuel type!</p>
+            <a href="https://play.google.com/store/apps/details?id=com.mobistuff.venzini" class="button">View
+                Project</a>
+        </div>
+    </div>
+    <div class="row project">
+        <div class="large-3 columns">
+            <img src="./img/xls/xls-medical.png" alt="XLS-Medical" width="200" height="180"/>
+        </div>
+        <div class="large-9 columns">
+            <h3>XLS-Medical</h3>
+            <h5 class="subheader">ANDROID</h5>
+
+            <p>Download the free XLS-Medical app to help you reach your weight-loss goals. The ‘Get Back to the Real
+                You’ 12 week challenge app features:</p>
+            <ul>
+                <li>On-the-go progress tracking</li>
+                <li>Food diary</li>
+                <li>Gentle reminders</li>
+                <li>1-2-1 support and much more</li>
+            </ul>
+            <a href="https://play.google.com/store/apps/details?id=com.xlsmedical" class="button">View Project</a>
+        </div>
+    </div>
+    <div class="row project">
+        <div class="large-3 columns">
+            <img src="./img/xanthi/xanthi.png" alt="XLS-Medical" width="200" height="180"/>
+        </div>
+        <div class="large-9 columns">
+            <h3>Old Town of Xanthi</h3>
+            <h5 class="subheader">ANDROID</h5>
+            <p>The Old Town of Xanthi is a small place that reveals its secrets to routes that connect the present
+                with the past, history with the culture of everyday life, faith in God with the truth of nature.</p>
+            <ul>
+                <li>Organize your walk in Old Town of Xanthi following routes of cultural, religious and architectural interest.</li>
+                <li>Choose to taste local delicacies you can find from a list of 34 restaurants, local sweet shops and taverns.</li>
+                <li>Learn the history of the Old town and share your experiences, pictures and thoughts with your friends and family.</li>
+                <li>Forget using a paper map or a city guide book, with this app you will save a lot of time and it will be much more fun!
+                </li>
+            </ul>
+            <a href="https://play.google.com/store/apps/details?id=com.koomasi.xanthiapp" class="button">View Project</a>
+        </div>
+    </div>
+</section>
+<hr/>
+<section>
+    <div class="row">
+        <div class="large-12 columns">
+            <h2>Developers</h2>
+        </div>
+    </div>
+    <div class="row developers">
+        <div class="large-6 columns text-center">
+            <img src="./img/developers/giannis.jpg" alt="Giannis" width="250px" height="250px"/>
+            <h3>Giannis</h3>
+            <p>Born in 1978 and started working in 2005. Moving fast to his 40s working as a senior software engineer in
+                Patras, Greece at Velti Innovation team. Favorite music artist is Aphex Twin, favorite movie is Dune
+                (Well… i am not entirely sure) and
+                favorite book is JRR Tolkien’s, The Silmarillion. Personal moto is Bilbo Baggins lives!</p>
+        </div>
+        <div class="large-6 columns text-center">
+            <img src="./img/developers/andreas.jpg" alt="Andreas" width="250px" height="250px"/>
+            <h3>Andreas</h3>
+            <p>Born in 1978 and started working in 2005. Moving fast to his 40s working as a senior software engineer in
+                Patras, Greece at Velti Innovation team. Favorite music artist is Aphex Twin, favorite movie is Dune
+                (Well… i am not entirely sure) and
+                favorite book is JRR Tolkien’s, The Silmarillion. Personal moto is Bilbo Baggins lives!</p>
+        </div>
+    </div>
+</section>
+<hr/>
+<section>
+    <div class="row">
+        <div class="large-12 columns">
+            <h2>Get in Touch!</h2>
+        </div>
+    </div>
+    <div class="row contact">
+        <div class="large-8 columns">
+            <p>We'd love to hear from you. You can either reach out to us as a whole and one of our awesome team members
+                will get back to you, or if you have a specific question reach out to one of our staff. We love getting
+                email all day <em>all day</em>.</p>
+            <div class="section-container tabs" data-section>
+                <section class="section">
+                    <h5 class="title"><a href="#panel1">Contact</a></h5>
+                    <div class="content" data-slug="panel1">
+                        <form>
+                            <div class="row collapse">
+                                <div class="large-2 columns">
+                                    <label class="inline">Your Name</label>
+                                </div>
+                                <div class="large-10 columns">
+                                    <input type="text" id="yourName" placeholder="Jane Smith">
+                                </div>
+                            </div>
+                            <div class="row collapse">
+                                <div class="large-2 columns">
+                                    <label class="inline"> Your Email</label>
+                                </div>
+                                <div class="large-10 columns">
+                                    <input type="text" id="yourEmail" placeholder="jane@smithco.com">
+                                </div>
+                            </div>
+                            <label>What's up?</label>
+                            <textarea rows="4"></textarea>
+                            <button type="submit" class="radius button">Submit</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="large-4 columns">
+            <h5>Map</h5>
+            <div id="map-canvas"></div>
+            <br/>
+            <p>20-22 Kefallinias<br/>26441, Patras, Greece</p>
+        </div>
+    </div>
+</section>
+<footer class="row">
+    <div class="large-12 columns">
+        <div class="row">
+            <div class="large-6 columns">
+                <p>© 2014 Mobistuff</p>
+            </div>
+            <div class="large-6 columns">
+                <ul class="inline-list right">
+                    <li><a href="http://www.mobistuff.net/home/feed/rss/">RSS</a></li>
+                    <li><a href="http://facebook.com/VenziniGR">Facebook</a></li>
+                    <li><a href="http://twitter.com/Iwannhs">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="js/vendor/jquery.js"></script>
+<script src="js/foundation.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(document).foundation({
+        });
+    });
+</script>
+</body>
+</html>
