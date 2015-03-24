@@ -14,6 +14,9 @@
         }
     </style>
     <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCgUu26TwfE9pyCvaTISk9pTVgncWhzPo4"></script>
+    <script type="text/javascript" src="js/vendor/jquery.js"></script>
+    <script type="text/javascript" src="js/foundation.min.js"></script>
+    <script type="text/javascript" src="js/mandrill.js"></script>
     <script>
         var map;
         function initialize() {
@@ -24,6 +27,42 @@
             map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
         }
         google.maps.event.addDomListener(window, 'load', initialize);
+
+        $(document).ready(function() {
+            /**
+             * Send email using mandrill
+             */
+            $("#sendEmailButton").click(function() {
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var text = $("#text").val();
+                var data = {
+                    "key": "tKLIpjP9FGh6Q7ULF1Wkgg",
+                    "message": {
+                        "text": text,
+                        "subject": "Mobistuff",
+                        "from_email": email,
+                        "from_name": name,
+                        "to": [{
+                            "email": "mcaibad2@gmail.com",
+                            "name": "Recipient Name",
+                            "type": "to"
+                        }]
+                    }
+                };
+                $.ajax({
+                    type: "POST",
+                    url: "https://mandrillapp.com/api/1.0/messages/send.json",
+                    data: data,
+                    success: function(data, textStatus, jQxhr) {
+                        console.log(JSON.stringify(data));
+                    },
+                    error: function(jqXhr, textStatus, errorThrown) {
+                        console.log(errorThrown);
+                    }
+                });
+            });
+        });
     </script>
 </head>
 <body>
@@ -31,11 +70,8 @@
     <div class="row">
         <div class="large-12 columns">
             <h1>Mobistuff</h1>
-
             <h3 class="subheader">Smart information on the go</h3>
-
-            <p>We are a small group of passionate developers. Feel free to contact us for any inquiry you may have. We
-                are always glad to hear your views and ideas!</p>
+            <p>We are a small group of passionate developers. Feel free to contact us for any inquiry you may have. We are always glad to hear your views and ideas!</p>
             <br/>
             <br/>
             <a href="#" class="button">Learn more</a>
@@ -83,11 +119,8 @@
         <div class="large-9 columns">
             <h3>VenziniGR</h3>
             <h5 class="subheader">ANDROID</h5>
-
-            <p>Prices are updated daily ​​from the Ministry of Development. Show prices on a map and list filtering with
-                criteria on distance, brand, price and fuel type!</p>
-            <a href="https://play.google.com/store/apps/details?id=com.mobistuff.venzini" class="button">View
-                Project</a>
+            <p>Prices are updated daily ​​from the Ministry of Development. Show prices on a map and list filtering with criteria on distance, brand, price and fuel type!</p>
+            <a href="https://play.google.com/store/apps/details?id=com.mobistuff.venzini" class="button">View Project</a>
         </div>
     </div>
     <div class="row project">
@@ -97,9 +130,7 @@
         <div class="large-9 columns">
             <h3>XLS-Medical</h3>
             <h5 class="subheader">ANDROID</h5>
-
-            <p>Download the free XLS-Medical app to help you reach your weight-loss goals. The ‘Get Back to the Real
-                You’ 12 week challenge app features:</p>
+            <p>Download the free XLS-Medical app to help you reach your weight-loss goals. The ‘Get Back to the Real You’ 12 week challenge app features:</p>
             <ul>
                 <li>On-the-go progress tracking</li>
                 <li>Food diary</li>
@@ -116,8 +147,7 @@
         <div class="large-9 columns">
             <h3>Old Town of Xanthi</h3>
             <h5 class="subheader">ANDROID</h5>
-            <p>The Old Town of Xanthi is a small place that reveals its secrets to routes that connect the present
-                with the past, history with the culture of everyday life, faith in God with the truth of nature.</p>
+            <p>The Old Town of Xanthi is a small place that reveals its secrets to routes that connect the present with the past, history with the culture of everyday life, faith in God with the truth of nature.</p>
             <ul>
                 <li>Organize your walk in Old Town of Xanthi following routes of cultural, religious and architectural interest.</li>
                 <li>Choose to taste local delicacies you can find from a list of 34 restaurants, local sweet shops and taverns.</li>
@@ -130,28 +160,30 @@
     </div>
 </section>
 <hr/>
-<section>
+<section id="developers">
     <div class="row">
         <div class="large-12 columns">
             <h2>Developers</h2>
         </div>
     </div>
     <div class="row developers">
-        <div class="large-6 columns text-center">
+        <div class="large-4 columns text-center">
             <img src="./img/developers/giannis.jpg" alt="Giannis" width="250px" height="250px"/>
             <h3>Giannis</h3>
-            <p>Born in 1978 and started working in 2005. Moving fast to his 40s working as a senior software engineer in
-                Patras, Greece at Velti Innovation team. Favorite music artist is Aphex Twin, favorite movie is Dune
-                (Well… i am not entirely sure) and
-                favorite book is JRR Tolkien’s, The Silmarillion. Personal moto is Bilbo Baggins lives!</p>
+            <p>Software developer, experienced in JAVA, web applications and mobile technologies. Specializing in ANDROID and HTML5.</p>
+            <p>Co-owner of mobistuff.net, providing content enriched with geolocation and positioning information for engaging presentation on mobile social platforms.</p>
         </div>
-        <div class="large-6 columns text-center">
+        <div class="large-4 columns text-center">
+            <img src="./img/developers/orestis.jpg" alt="Orestis" width="250px" height="250px"/>
+            <h3>Orestis</h3>
+            <p>Senior Software Engineer at Citrix</p>
+        </div>
+        <div class="large-4 columns text-center">
             <img src="./img/developers/andreas.jpg" alt="Andreas" width="250px" height="250px"/>
             <h3>Andreas</h3>
-            <p>Born in 1978 and started working in 2005. Moving fast to his 40s working as a senior software engineer in
-                Patras, Greece at Velti Innovation team. Favorite music artist is Aphex Twin, favorite movie is Dune
-                (Well… i am not entirely sure) and
-                favorite book is JRR Tolkien’s, The Silmarillion. Personal moto is Bilbo Baggins lives!</p>
+            <p>Moving fast to his 40s working as a senior software engineer in Patras, Greece at Velti Innovation team.</p>
+            <p>Favorite music artist is Aphex Twin, favorite movie is Dune (Well… i am not entirely sure) and favorite book is JRR Tolkien’s, The Silmarillion.</p>
+            <p>Personal moto is Bilbo Baggins lives!</p>
         </div>
     </div>
 </section>
@@ -164,9 +196,7 @@
     </div>
     <div class="row contact">
         <div class="large-8 columns">
-            <p>We'd love to hear from you. You can either reach out to us as a whole and one of our awesome team members
-                will get back to you, or if you have a specific question reach out to one of our staff. We love getting
-                email all day <em>all day</em>.</p>
+            <p>We'd love to hear from you. You can either reach out to us as a whole and one of our awesome team members will get back to you, or if you have a specific question reach out to one of our staff.</p>
             <div class="section-container tabs" data-section>
                 <section class="section">
                     <h5 class="title"><a href="#panel1">Contact</a></h5>
@@ -177,20 +207,20 @@
                                     <label class="inline">Your Name</label>
                                 </div>
                                 <div class="large-10 columns">
-                                    <input type="text" id="yourName" placeholder="Jane Smith">
+                                    <input type="text" id="name" placeholder="Jane Smith">
                                 </div>
                             </div>
                             <div class="row collapse">
                                 <div class="large-2 columns">
-                                    <label class="inline"> Your Email</label>
+                                    <label class="inline">Your Email</label>
                                 </div>
                                 <div class="large-10 columns">
-                                    <input type="text" id="yourEmail" placeholder="jane@smithco.com">
+                                    <input type="text" id="email" placeholder="jane@smithco.com">
                                 </div>
                             </div>
                             <label>What's up?</label>
-                            <textarea rows="4"></textarea>
-                            <button type="submit" class="radius button">Submit</button>
+                            <textarea id="text" rows="4"></textarea>
+                            <button id="sendEmailButton" type="submit" class="radius button">Submit</button>
                         </form>
                     </div>
                 </section>
@@ -199,7 +229,7 @@
         <div class="large-4 columns">
             <h5>Map</h5>
             <div id="map-canvas"></div>
-            <br/>
+            <br />
             <p>20-22 Kefallinias<br/>26441, Patras, Greece</p>
         </div>
     </div>
@@ -220,13 +250,5 @@
         </div>
     </div>
 </footer>
-<script src="js/vendor/jquery.js"></script>
-<script src="js/foundation.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $(document).foundation({
-        });
-    });
-</script>
 </body>
 </html>
